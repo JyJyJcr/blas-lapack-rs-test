@@ -1,0 +1,17 @@
+[package]
+name = "blastest"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+cblas-sys = { version = "*", features = ["blas-src","ilp64"]}
+blas-src = { version = "*", features = ["openblas"] }
+openblas-src = { version = "*", features = ["system","ilp64"]}
+# accelerate-src = "0.3.2"
+
+
+[patch.crates-io]
+blas-src = { git = "https://github.com/JyJyJcr/blas-src.git", branch = "ilp64-draft" }
+cblas-sys = { git = "https://github.com/JyJyJcr/cblas-sys.git", branch = "ilp64-draft" }
+openblas-src = { git = "https://github.com/JyJyJcr/openblas-src.git", branch = "ilp64-draft" }
+intel-mkl-src = { git = "https://github.com/JyJyJcr/intel-mkl-src.git", branch = "pkg-config" }

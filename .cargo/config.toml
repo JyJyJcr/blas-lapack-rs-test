@@ -1,0 +1,5 @@
+[env]
+# with openblas via brew
+# CBLAS_SYS_SUFFIX = "64_"
+# with accelerate
+# CBLAS_SYS_SUFFIX = "$NEWLAPACK$ILP64"

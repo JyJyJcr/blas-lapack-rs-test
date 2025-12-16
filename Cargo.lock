@@ -33,19 +33,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "812e12b5285cc515a9c72a5c1d3b6d46a19dac5acfef5265968c166106e31dd3"
 
 [[package]]
-name = "blas-src"
-version = "0.14.0"
-source = "git+https://github.com/JyJyJcr/blas-src.git?branch=ilp64-draft#e2688191454c103725c5a788a416b21713a7b66f"
-dependencies = [
- "openblas-src",
-]
-
-[[package]]
-name = "blastest"
+name = "blas-lapack-rs-test"
 version = "0.1.0"
 dependencies = [
  "blas-src",
  "cblas-sys",
+ "openblas-src",
+]
+
+[[package]]
+name = "blas-src"
+version = "0.14.0"
+source = "git+https://github.com/JyJyJcr/blas-src.git?branch=ilp64-draft#e2688191454c103725c5a788a416b21713a7b66f"
+dependencies = [
  "openblas-src",
 ]
 

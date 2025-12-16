@@ -1,5 +1,19 @@
 [env]
-# with openblas via brew
+
+# manual openblas 32 from nix ... work with default
+
+# manual openblas 64 from nix ... work with default
+
+# manual openblas 32 from homebrew ... work with default
+
+# manual openblas 64 from homebrew
 # CBLAS_SYS_SUFFIX = "64_"
-# with accelerate
+
+
+# manual accelerate 32 (old interface) ... work with default
+
+# manual accelerate 32 (new interface)
+# CBLAS_SYS_SUFFIX = "$NEWLAPACK"
+
+# manual accelerate 64
 # CBLAS_SYS_SUFFIX = "$NEWLAPACK$ILP64"

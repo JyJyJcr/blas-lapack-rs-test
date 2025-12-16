@@ -1,17 +1,20 @@
 use cblas_sys::{self, cblas_dgemm};
 
+// auto mode
 extern crate blas_src as _;
-//extern crate openblas_src as _;
+
+// manual mode
+// extern crate accelerate_src as _;
+// extern crate openblas_src as _;
 
 fn main() {
-    let size = i32::MAX as usize + 1;
-    //let size: usize = 10_000;
+    let size = i32::MAX as usize + 1; // overflow i32
+    //let size: usize = 10000;
     println!("size: {}", size);
 
     println!("alloc...");
     let a: Vec<f64> = vec![1.0; size];
     println!("alloc.");
-    //let b: Vec<f32> = vec![1.0; size];
     let mut c: Vec<f64> = vec![0.0; 1];
 
     unsafe {

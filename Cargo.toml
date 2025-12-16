@@ -1,14 +1,64 @@
 [package]
-name = "blastest"
+name = "blas-lapack-rs-test"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-cblas-sys = { version = "*", features = ["blas-src","ilp64"]}
+
+# auto mode
+
+# auto openblas 32
+cblas-sys = { version = "*", features = ["blas-src","lp64"]}
 blas-src = { version = "*", features = ["openblas"] }
-openblas-src = { version = "*", features = ["system","ilp64"]}
+openblas-src = { version = "*", features = ["system"]}
+
+# auto openblas (auto select 32)
+# cblas-sys = { version = "*", features = ["blas-src"]}
+# blas-src = { version = "*", features = ["openblas"] }
+# openblas-src = { version = "*", features = ["system"]}
+
+# auto openblas 64
+# cblas-sys = { version = "*", features = ["blas-src","ilp64"]}
+# blas-src = { version = "*", features = ["openblas"] }
+# openblas-src = { version = "*", features = ["system","ilp64"]}
+
+# auto openblas 64 (auto select 64)
+# cblas-sys = { version = "*", features = ["blas-src"]}
+# blas-src = { version = "*", features = ["openblas"] }
+# openblas-src = { version = "*", features = ["system","ilp64"]}
+
+# auto accelerate 32
+# cblas-sys = { version = "*", features = ["blas-src","lp64"]}
+# blas-src = { version = "*", features = ["accelerate"] }
 # accelerate-src = "0.3.2"
 
+# auto accelerate 64
+# cblas-sys = { version = "*", features = ["blas-src","ilp64"]}
+# blas-src = { version = "*", features = ["accelerate"] }
+# accelerate-src = "0.3.2"
+
+# auto accelerate (auto select 64)
+# cblas-sys = { version = "*", features = ["blas-src"]}
+# blas-src = { version = "*", features = ["accelerate"] }
+# accelerate-src = "0.3.2"
+
+# manual mode (switch .cargo/config.toml and src/main.rs)
+
+# manual accelerate 32
+# cblas-sys = { version = "*", features = ["lp64"]}
+# accelerate-src = "0.3.2"
+
+# manual accelerate 64
+# cblas-sys = { version = "*", features = ["ilp64"]}
+# accelerate-src = "0.3.2"
+
+# manual openblas 32
+# cblas-sys = { version = "*", features = ["lp64"]}
+# openblas-src = { version = "*", features = ["system"]}
+
+# manual openblas 64
+# cblas-sys = { version = "*", features = ["ilp64"]}
+# openblas-src = { version = "*", features = ["system","ilp64"]}
 
 [patch.crates-io]
 blas-src = { git = "https://github.com/JyJyJcr/blas-src.git", branch = "ilp64-draft" }
